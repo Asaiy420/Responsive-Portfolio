@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aryan KC's portfolio projects showcasing full-stack development work"
+    />
+    <title>Projects - Aryan Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">AK</div>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="content-card">
+        <h1>My Projects</h1>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h2>AI Chat</h2>
+            <p>
+              A full stack AI Chat Application like ChatGPT made using Gemini's
+              API key with real time chat features. The backend is built using
+              Node.js and Express, while the frontend is developed with Vue.js.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/Asaiy420/ai-chat-backend"
+                class="project-link"
+              >
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://ai-chat-85xc.vercel.app/" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h2>Native Book Store Application</h2>
+            <p>
+              An React Native project on GitHub that showcases a book store
+              application. It includes features like user authentication, book
+              listings, and allows uploading book images.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/Asaiy420/Book-store-app"
+                class="project-link"
+              >
+                <i class="fab fa-github"></i> View Project
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h2>Chat Application</h2>
+            <p>
+              A fullstack chat Application made using PERN Stack with rate
+              limiting and real-time messaging features.
+            </p>
+            <div class="project-links">
+              <a href="https://example.com/tasks" class="project-link">
+                <i class="fas fa-external-link-alt"></i> View Project
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <p>&copy; 2025 Aryan KC. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // for responsiveness
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const header = document.querySelector("header");
+      let lastScroll = 0;
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }
+      });
+
+      // Hiding the navbar as users scroll down
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 0) {
+          header.classList.remove("nav-hidden");
+          return;
+        }
+
+        if (
+          currentScroll > lastScroll &&
+          !header.classList.contains("nav-hidden")
+        ) {
+          // Scrolling down
+          header.classList.add("nav-hidden");
+        } else if (
+          currentScroll < lastScroll &&
+          header.classList.contains("nav-hidden")
+        ) {
+          // Scrolling up
+          header.classList.remove("nav-hidden");
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
+</html>
