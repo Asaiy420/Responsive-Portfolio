@@ -4,11 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Aryan Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
+    <div class="overlay"></div>
     <header>
-      <nav>
-        <div>
+      <nav class="navbar">
+        <div class="logo">Aryan KC</div>
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="projects.html">Projects</a>
@@ -18,27 +34,27 @@
     </header>
 
     <main>
-      <section id="contact">
+      <div class="content-card">
         <h1>Contact Me</h1>
-        <div>
-          <p>
+        <div class="about-content">
+          <p class="intro-text">
             I'm always open to new opportunities and collaborations. Feel free
             to reach out!
           </p>
 
-          <ul>
-            <li>
-              Email:
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
               <a href="mailto:kcaryan05@gmail.com">kcaryan05@gmail.com</a>
-            </li>
-            <li>
-              GitHub:
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
               <a href="https://github.com/Asaiy420">github.com/Asaiy420</a>
-            </li>
-          </ul>
+            </div>
+          </div>
 
-          <form action="#" method="POST">
-            <div>
+          <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
               <label for="name">Name:</label>
               <input
                 type="text"
@@ -49,7 +65,7 @@
               />
             </div>
 
-            <div>
+            <div class="form-group">
               <label for="email">Email:</label>
               <input
                 type="email"
@@ -59,13 +75,39 @@
                 required
               />
             </div>
+
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Enter your message"
+                required
+                rows="5"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="cta-btn primary">Send Message</button>
           </form>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer>
+      <div class="social-links">
+        <a href="https://github.com/Asaiy420" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://linkedin.com/in/your-profile" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://twitter.com/your-handle" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
       <p>&copy; 2025 Aryan KC. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
